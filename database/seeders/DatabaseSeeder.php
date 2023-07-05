@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             $user->email_verified_at = now();
             $user->password = Hash::make('admin');
             $user->remember_token = Str::random(10);
+            $user->role = 'admin';
             $user->save();
 
             $page = new Page();
