@@ -23,16 +23,22 @@
 
 
     <div class="min-w-max text-3xl flex justify-end">
+
+    <div class="mr-10 text-2xl currency">
+            <a class="inline-block text-xl rounded-full px-3 py-1 text-white" href="{{route('login')}}">Login</a>
+            <!-- <a class="inline-block text-xl rounded-full px-3 py-1 text-white" href="{{ route('currency', 'tl') }}" title="Change Currency to Lira">₺</a>
+            <a class="inline-block text-xl rounded-full px-3 py-1 text-white" href="{{ route('currency', 'bdt') }}" title="Change Currency to Taka">৳</a> -->
+        </div>
         <!------ Currency Change Button ------->
         <div class="mr-10 text-2xl currency">
             <a class="inline-block text-xl rounded-full px-3 py-1 text-white" href="{{ route('currency', 'usd') }}" title="Change Currency to Doller">$</a>
-            <a class="inline-block text-xl rounded-full px-3 py-1 text-white" href="{{ route('currency', 'tl') }}" title="Change Currency to Lira">₺</a>
-            <a class="inline-block text-xl rounded-full px-3 py-1 text-white" href="{{ route('currency', 'bdt') }}" title="Change Currency to Taka">৳</a>
+            <!-- <a class="inline-block text-xl rounded-full px-3 py-1 text-white" href="{{ route('currency', 'tl') }}" title="Change Currency to Lira">₺</a>
+            <a class="inline-block text-xl rounded-full px-3 py-1 text-white" href="{{ route('currency', 'bdt') }}" title="Change Currency to Taka">৳</a> -->
         </div>
 
         <!------ Language Change Button - Flag ------->
         <a href="{{ LaravelLocalization::getLocalizedURL('en') }}" title="English Language">🏁</a>
-        <a href="{{ LaravelLocalization::getLocalizedURL('bn') }}" title="Bangla Language" class="px-3">
+        <!-- <a href="{{ LaravelLocalization::getLocalizedURL('bn') }}" title="Bangla Language" class="px-3">
             {{-- 🚩 --}}
             <svg style="display: inline-block" xmlns="http://www.w3.org/2000/svg" width="28pt"
             height="18pt" viewBox="0 0 16 10">
@@ -56,7 +62,7 @@
                 </g>
             </svg>
         </a>
-        <a href="{{ LaravelLocalization::getLocalizedURL('tr') }}" title="Turkish Language"><!--🏳️--> 🚩</a>
+        <a href="{{ LaravelLocalization::getLocalizedURL('tr') }}" title="Turkish Language">🚩</a> -->
         {{-- &#127482;&#127480; --}}
     </div>
 
