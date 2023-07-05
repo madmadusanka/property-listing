@@ -1,15 +1,15 @@
 <form action="{{route('property.index')}}" method="GET" class="flex justify-between" style="font-family: 'Nunito', sans-serif;">
     <div class="flex flex-1 justify-between items-center">
-        <div class="flex flex-col mx-3">
+        <!-- <div class="flex flex-col mx-3">
             <label for="sale">{{ __('Rent') }}/{{ __('Sale') }}</label>
             <select id="sale" name="sale" class="border-0 focus:ring-0">
-                <option value="">{{ __('Rent') }}/{{ __('Sale') }}</option>
+                 <option value="">{{ __('Rent') }}/{{ __('Sale') }}</option>
                 <option {{request('sale') == '2' ? 'selected="selected"' : ''}} value="2">{{ __('Rent') }}</option>
                 <option {{request('sale') == '1' ? 'selected="selected"' : ''}} value="1">{{ __('Sale') }}</option>
             </select>
-        </div>
+        </div> -->
 
-        <div class="py-3 self-center border-gray-500 border"></div>
+        <!-- <div class="py-3 self-center border-gray-500 border"></div> -->
         <div class="flex flex-col mx-3">
             <label for="location">{{ __('Location') }}</label>
             <select id="location" name="location" class="border-0 focus:ring-0">
@@ -30,8 +30,8 @@
                 <option {{request('type') == '2' ? 'selected="selected"' : ''}} value="2">{{ __('Villa') }}</option>
             </select>
         </div>
-        <div class="py-3 self-center border-gray-500 border"></div>
-        <div class="flex flex-col mx-3">
+        <!-- <div class="py-3 self-center border-gray-500 border"></div> -->
+        <!-- <div class="flex flex-col mx-3">
             <label for="price">{{__('Price')}}</label>
             <select id="price" name="price" class="border-0 focus:ring-0">
                 <option value="">{{__('Price')}}</option>
@@ -42,7 +42,7 @@
                 <option {{request('price') == '500000' ? 'selected="selected"' : ''}} value="500000">400000 - 500000 {{ __('Tk') }}</option>
                 <option {{request('price') == '500000+' ? 'selected="selected"' : ''}} value="500000+">500000 up {{ __('Tk') }}</option>
             </select>
-        </div>
+        </div> -->
         <div class="py-3 self-center border-gray-500 border"></div>
         <div class="flex flex-col mx-3">
             <label for="bedrooms">{{__('Bedrooms')}}</label>
