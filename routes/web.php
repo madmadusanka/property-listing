@@ -30,24 +30,30 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 });
 
 
-Route::prefix('dashboard')->middleware('auth')->group(function () {
+Route::prefix('dashboard')->middleware('auth','role:user')->group(function () {
+
     // Dashboard/Admin Panel
     Route::get('/', [DashboardController::class,'index'])->name('dashboard');
     // Property
     Route::resource('properties', AdminPropertyController::class);
     // Delete Media
     Route::get('properties/delete-media/{id}', [AdminPropertyController::class, 'destroyMedia'])->name('deleteMedia');
-    // Location
-    Route::resource('location', AdminLocationController::class);
-    // Page
-    Route::resource('pages', AdminPageController::class);
-    // User
-    Route::resource('user', UserController::class);
+  
     // Message
     Route::resource('message', AdminMessageController::class);
 
 });
 
+
+
+Route::prefix('dashboard')->middleware('auth','role:admin')->group(function () {
+  // Location
+  Route::resource('location', AdminLocationController::class);
+  // Page
+  Route::resource('pages', AdminPageController::class);
+  // User
+  Route::resource('user', UserController::class);
+});
 
 require __DIR__.'/auth.php';
 
