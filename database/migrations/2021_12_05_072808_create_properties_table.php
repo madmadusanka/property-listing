@@ -35,9 +35,11 @@ class CreatePropertiesTable extends Migration
             $table->longText('description');
             $table->longText('description_tr');
             $table->timestamps();
+            $table->unsignedBigInteger('ussr_id');
 
             //$table->foreign('featured_media_id')->references('id')->on('media');
             $table->foreign('location_id')->references('id')->on('locations');
+            
         });
     }
 

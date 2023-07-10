@@ -30,7 +30,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 });
 
 
-Route::prefix('dashboard')->middleware('auth','role:user')->group(function () {
+Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     // Dashboard/Admin Panel
     Route::get('/', [DashboardController::class,'index'])->name('dashboard');
@@ -47,6 +47,7 @@ Route::prefix('dashboard')->middleware('auth','role:user')->group(function () {
 
 
 Route::prefix('dashboard')->middleware('auth','role:admin')->group(function () {
+
   // Location
   Route::resource('location', AdminLocationController::class);
   // Page

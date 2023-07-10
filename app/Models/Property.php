@@ -12,7 +12,7 @@ class Property extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name','name_tr','featured_image','location_id','price','sale','type','bedrooms','drawing_rooms','bathrooms','net_sqm','gross_sqm','pool','overview','overview_tr','why_buy','why_buy_tr','description','description_tr',
+        'name','name_tr','featured_image','location_id','price','sale','type','bedrooms','drawing_rooms','bathrooms','net_sqm','gross_sqm','pool','overview','overview_tr','why_buy','why_buy_tr','description','description_tr','user_id'
     ];
     // protected $guarded = ['created_at', 'updated_at'];
     // protected $hidden = ['created_at', 'updated_at'];

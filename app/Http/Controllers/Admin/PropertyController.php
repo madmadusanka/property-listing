@@ -9,6 +9,7 @@ use App\Models\Property;
 use App\Models\Media;
 use Flasher\Laravel\Facade\Flasher;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class PropertyController extends Controller
 {
@@ -16,7 +17,21 @@ class PropertyController extends Controller
 //------------------------ Index of Property ----------------------------------------------------------------
     public function index()
     {
-        $properties = Property::latest()->paginate(20);
+             // if($user && $user->getAttribute('role') == 'user'){
+        //     $locations = Location::where('user_id', $user->getAttribute('id'))->get();
+
+        // }
+        
+        $user = Auth::user();
+        if($user && $user->getAttribute('role') == 'user')
+        {
+            $properties = Property::where('user_id', $user->id)->latest()->paginate(20);
+        }
+        else{
+            $properties = Property::latest()->paginate(20);
+        }
+        // $properties = Property::latest()->where('user_id', $user->getAttribute('id'))->paginate(20);
+
         return view('dashboard.property.index')->with('properties', $properties);
     }
 
@@ -24,7 +39,17 @@ class PropertyController extends Controller
 //------------------------ Create Property ----------------------------------------------------------------
     public function create()
     {
-        $locations = Location::all();
+        
+        $user = Auth::user();
+        // dd($user->getAttribute('role'));
+        // if($user && $user->getAttribute('role') == 'user'){
+        //     $locations = Location::where('user_id', $user->getAttribute('id'))->get();
+
+        // }
+        // else{
+            $locations = Location::all();
+
+        // }
         return view('dashboard.property.create')->with(['locations' => $locations]);
     }
 
