@@ -18,7 +18,8 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-        if($user && $user->getAttribute('role') == 'user')
+        $role = $user->getAttribute('role');
+        if($role == 'user')
         {
             
             $counter = [
@@ -39,8 +40,11 @@ class DashboardController extends Controller
             ];
         }
         
-
-        return view('dashboard.index')->with('counter', $counter);
+        return view('dashboard.index')->with([
+            'counter' => $counter,
+            'role' => $role,
+        ]);
+        // return view('dashboard.index')->with('counter', $counter);
     }
 
 }
