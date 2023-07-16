@@ -10,13 +10,10 @@
         </div>
     </div>
    
-    <div class="container text-center pt-14">
-        <div class="container pt-14">
-        <div class="flex justify-between ">
-            <div class="flex-1 mr-10 text-lg leading-normal">
-                <p>{{__($page->content)}}</p>
-            </div>
-        </div>
+    <div id="page-content">
+
+                {!!$page->content!!}
+                
     </div>
 
 </x-guest-layout>
