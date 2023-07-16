@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -27,7 +28,14 @@ class DashboardController extends Controller
                 'location' => count(Location::all()),
                 'page' => count(Page::all()),
                 'user' => count(User::all()),
-                'message' => count(PropertyEnquire::all()),
+                'message' => count(
+                    DB::table('property_enquires as pe')
+                    ->leftJoin('properties as p', 'p.id', '=', 'pe.propertyId')
+                    ->where('p.user_id', '=', $user->id)
+                    ->get()
+                ),
+
+                
             ];
         }
         else{
