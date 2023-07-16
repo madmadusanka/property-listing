@@ -2,11 +2,11 @@
     <div class="shadow-lg">
         <a href="" class="absolute left-3 w-9 h-9 leading-10 self-center text-base top-3 bg-black text-white bg-opacity-25 text-center hover:bg-yellow-500 hover:text-white duration-200 rounded-full"><i class="fa fa-heart-o"></i></a>
 
-        {{-- @if ( File::exists(storage_path('app/public/uploads/') . $property->featured_image) ) --}}
-        @if (file_exists(public_path('storage/uploads/' . $property->featured_image)))
-            <div class="py-20 flex-1 bg-center" style="background-image: url('/storage/uploads/{{ $property->featured_image }}')"></div>
+        {{-- @if ( File::exists(storage_path('uploads/images/') . $property->featured_image) ) --}}
+        @if (file_exists(public_path('uploads/images/' . $property->featured_image)))
+            <div class="py-20 flex-1 bg-center" style="background-image: url('/images/{{ $property->featured_image }}')"></div>
         @else
-            <div class="py-20 flex-1 bg-center" style="background-image: url('{{ $property->featured_image }}')"></div>
+            <div class="py-20 flex-1 bg-center" style="background-image: url('/images/{{ $property->featured_image }}')"></div>
         @endif
 
         <div class="p-3">
