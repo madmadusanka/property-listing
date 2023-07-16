@@ -69,9 +69,9 @@
                     <div class="gallery-slider">
                         @foreach($property->gallery as $gallery)
                             @if (file_exists(public_path('/images/'.$gallery->name)))
-                                <div style="background-image: url('/images/{{ $gallery->name }}')" class="single-gallery-item bg-cover bg-center"></div>
+                                <div style="background-image: url('/images/{{ $gallery->name }}')" class="single-gallery-item bg-cover bg-center custom-thumbnail"></div>
                             @else
-                                <div style="background-image: url(/images/{{$gallery->name }})" class="single-gallery-item bg-cover bg-center"></div>
+                                <div style="background-image: url(/images/{{$gallery->name }})" class="single-gallery-item bg-cover bg-center custom-thumbnail"></div>
                             @endif
                         @endforeach
                     </div>
@@ -80,9 +80,9 @@
                         @foreach($property->gallery as $gallery)
                             <img src="'images/{{$gallery->name}}" >
                             @if (file_exists(public_path('/images/'.$gallery->name)))
-                                <div style="background-image: url('/images/{{ $gallery->name }}')" class="single-thumbnail-item bg-cover bg-center"></div>
+                                <div style="background-image: url('/images/{{ $gallery->name }}')" class="single-thumbnail-item bg-cover bg-center custom-thumbnail"></div>
                             @else
-                                <div style="background-image: url(/images/{{$gallery->name}})" class="single-thumbnail-item bg-cover bg-center"></div>
+                                <div style="background-image: url(/images/{{$gallery->name}})" class="single-thumbnail-item bg-cover bg-center custom-thumbnail"></div>
                             @endif
                         @endforeach
                     </div>
