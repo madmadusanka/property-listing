@@ -25,14 +25,14 @@
                                 @enderror
                             </div>
 
-                            <div class="flex-1 px-4">
+                            <!-- <div class="flex-1 px-4">
                                 <label class="civanoglu-label" for="name_tr">Title - Turkish <span class="required-text">*</span></label>
                                 <input class="civanoglu-input" type="text" id="name_tr" name="name_tr" value="{{old('name_tr')}}" required>
 
                                 @error('name_tr')
                                     <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                                 @enderror
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="mb-6">
@@ -214,14 +214,14 @@
                                 @enderror
                             </div>
 
-                            <div class="flex-1 px-4">
+                            <!-- <div class="flex-1 px-4">
                                 <label class="civanoglu-label" for="overview_tr">Overview - TR <span class="required-text">*</span></label>
                                 <textarea class="civanoglu-input" name="overview_tr" id="overview_tr" cols="30" rows="3" required>{{old('overview_tr')}}</textarea>
 
                                 @error('overview_tr')
                                     <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                                 @enderror
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="flex -mx-4 mb-6">
@@ -234,14 +234,14 @@
                                 @enderror
                             </div>
 
-                            <div class="flex-1 px-4">
+                            <!-- <div class="flex-1 px-4">
                                 <label class="civanoglu-label" for="why_buy_tr">Why buy - TR <span class="required-text">*</span></label>
                                 <textarea class="civanoglu-input" name="why_buy_tr" id="why_buy_tr" cols="30" rows="5" required>{{old('why_buy_tr')}}</textarea>
 
                                 @error('why_buy_tr')
                                     <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                                 @enderror
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="flex -mx-4 mb-6">
@@ -254,14 +254,14 @@
                                 @enderror
                             </div>
 
-                            <div class="flex-1 px-4">
+                            <!-- <div class="flex-1 px-4">
                                 <label class="civanoglu-label" for="description_tr">Description - TR <span class="required-text">*</span></label>
                                 <textarea class="civanoglu-input" name="description_tr" id="description_tr" cols="30" rows="10" required>{{old('description_tr')}}</textarea>
 
                                 @error('description_tr')
                                     <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                                 @enderror
-                            </div>
+                            </div> -->
                         </div>
 
                         <button class="btn" type="submit">Save Property</button>

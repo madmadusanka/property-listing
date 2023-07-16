@@ -233,9 +233,8 @@ class PropertyController extends Controller
 
                 $extension = $image->getClientOriginalExtension();
 
-                $featured_image_name = Str::uuid() . '.' . $extension;
+                $gallery_image_name = Str::uuid() . '.' . $extension;
 
-                $gallery_image_name = time() . mt_rand(100,999) . '-' . $image->getClientOriginalName();
                 $image->move(public_path('images'),$gallery_image_name);
                 // Insert into PropertyMedia
                 Media::create([
