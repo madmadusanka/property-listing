@@ -192,6 +192,7 @@ class PropertyController extends Controller
 //-------------------- Save or Update Property ------------------------------------------
     public function saveOrUpdateProperty($property, $request)
     {
+        $user = Auth::user();
         $property->name = $request->name;
 
         // Get Default value from databse
@@ -223,6 +224,8 @@ class PropertyController extends Controller
         $property->overview = $request->overview;
         $property->why_buy = $request->why_buy;
         $property->description = $request->description;
+        $property->user_id =$user->id;
+        
 
         // Save or update data
         $property->save();
