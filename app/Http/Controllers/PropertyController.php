@@ -85,13 +85,14 @@ class PropertyController extends Controller
             'phone'  => $request->phone,
             'email'  => $request->email,
             'message'  => $request->message . '\nThis message was sent from '. route('property.show',$propertyID) . ' website.',
+            'propertyId' => $propertyID,
         ]);
 
         // Send User & Admin mail/message
         $data = [$request->all(), 'propertyURL' => route('property.show', $propertyID)];
 
         // Send User & Admin mail/message via Queue
-        ProcessEnquireEmail::dispatch($data);
+        // ProcessEnquireEmail::dispatch($data);
         // Mail::send(new EnquireEmail($data));     // Send User & Admin mail/message via normal way
 
         return redirect()->back()->with(['message'=>'Message sent successfully']);
