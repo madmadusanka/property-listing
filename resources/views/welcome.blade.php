@@ -121,11 +121,11 @@ Transparent Transactions: Trust and Integrity Are at the Core of Our Operations.
     </div> -->
     <div class="container pt-14">
         <div class="flex justify-center items-center">
-            <a href="" class="btn">More About US</a>
+            <a href="{{route('page', 'about-us')}}" class="btn">More About US</a>
             <p class="mx-10">or</p>
-            <a href="" class="btn">Start searching with filters</a>
+            <a href="{{route('home')}}" class="btn">Start searching with filters</a>
             <p class="mx-10">or</p>
-            <a href="" class="btn">Post Your Property</a>
+            <a href="{{route('login')}}" class="btn">Post Your Property</a>
             
         </div>
     </div>

@@ -63,9 +63,9 @@
             <div class="flex -mx-6">
                 <div class="flex-1 px-6">
                     <ul>
-                        <li><a href="">Terms And Conditions</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Contact US</a></li>
+                        <li><a href="{{route('page', 'terms-and-conditions')}}">Terms And Conditions</a></li>
+                        <li><a href="{{route('page', 'about-us')}}">About Us</a></li>
+                        <li><a href="{{route('page', 'contact-us')}}">Contact US</a></li>
                         <!-- <li><a href="">Lorem ipsum dolor.</a></li> -->
                     </ul>
                 </div>
