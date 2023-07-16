@@ -4,9 +4,9 @@
 
         {{-- @if ( File::exists(storage_path('uploads/images/') . $property->featured_image) ) --}}
         @if (file_exists(public_path('uploads/images/' . $property->featured_image)))
-            <div class="py-20 flex-1 bg-center" style="background-image: url('/images/{{ $property->featured_image }}')"></div>
+            <div class="py-20 flex-1 bg-center custom-thumbnail" style="background-image: url('/images/{{ $property->featured_image }}')"></div>
         @else
-            <div class="py-20 flex-1 bg-center" style="background-image: url('/images/{{ $property->featured_image }}')"></div>
+            <div class="py-20 flex-1 bg-center custom-thumbnail" style="background-image: url('/images/{{ $property->featured_image }}')"></div>
         @endif
 
         <div class="p-3">
