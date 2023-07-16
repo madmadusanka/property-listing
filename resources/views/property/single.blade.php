@@ -15,11 +15,11 @@
         <div class="container mx-auto">
             <div class="flex justify-between">
                 <div class="w-8/12">
-                    @if(request()->is('*tr*'))
+                    <!-- @if(request()->is('*tr*'))
                         <h2 class="text-3xl text-gray-600">{{$property->name_tr}}</h2>
                     @else
                         <h2 class="text-3xl text-gray-600">{{$property->name}}</h2>
-                    @endif
+                    @endif -->
                     <h3 class="text-lg mt-2">{{ __('Price') }}: <span class="text-red-800">
                         {{-- {{ number_format($property->price, 2, ',', ',') }} TK</span> --}}
                         {{-- {{ number_format($property->price) }} {{ __('Tk') }}</span> --}}
@@ -200,9 +200,9 @@
 
             {{-- Sidebar --}}
             <div class="w-3/12 ml-6">
-                <div class="border-2 border-red-800 px-5 py-3 text-center font-light text-base">
+                <!-- <div class="border-2 border-red-800 px-5 py-3 text-center font-light text-base">
                     <p>Subscribe to Property Turkey media for blogs/news/videos</p>
-                </div>
+                </div> -->
                 {{-- Form --}}
                 <div class="px-4 py-5 text-left bg-gray-300 my-5">
                     <h1 class="text-2xl font-normal leading-none mb-5 langBN">{{ __('Enquire about this property') }}</h1>
