@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="pt-20">
+    <!-- <div class="pt-20">
         <h2 class="section-title text-4xl text-center pb-8 langBN">{{ __('Article & Advices') }}</h2>
         <div class="flex -mx-4">
             <div class="flex-1 px-4">
@@ -33,9 +33,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="pt-20 text-lg border-b-2 border-gray-300 pb-16 mb-20">
+    <!-- <div class="pt-20 text-lg border-b-2 border-gray-300 pb-16 mb-20">
         <h2 class="section-title text-4xl text-center pb-8 langBN">{{ __('Additional services') }}</h2>
         <div class="flex -mx-4">
             <div class="flex-1 px-4">
@@ -51,38 +51,38 @@
                 <a href="" class="underline">Lorem ipsum dolor jhadgfda.</a>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="flex pb-12">
+    <div class="flex pb-12" >
         <div class="w-1/4 pr-6">
             <img width="100" src="/img/house-logo.png" alt="">
-            <p class="text-sm mt-7">Lorem ipsum dolor sit amet.</p>
+            <p class="text-sm mt-7">Sam's Property Management</p>
         </div>
 
         <div class="w-3/4 font-bold leading-8">
             <div class="flex -mx-6">
                 <div class="flex-1 px-6">
                     <ul>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
+                        <li><a href="">Terms And Conditions</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact US</a></li>
+                        <!-- <li><a href="">Lorem ipsum dolor.</a></li> -->
                     </ul>
                 </div>
                 <div class="flex-1 px-6">
                     <ul>
+                        <li><a href="">Facebook</a></li>
+                        <!-- <li><a href="">Lorem ipsum dolor.</a></li>
                         <li><a href="">Lorem ipsum dolor.</a></li>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
+                        <li><a href="">Lorem ipsum dolor.</a></li> -->
                     </ul>
                 </div>
                 <div class="flex-1 px-6">
                     <ul>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
-                        <li><a href="">Lorem ipsum dolor.</a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
                     </ul>
                 </div>
             </div>
@@ -91,4 +91,4 @@
 
 
 </div>
-<img class="w-full" src="/img/footer.jpg" alt="">
+<!-- <img class="w-full" src="/img/footer.jpg" alt=""> -->
