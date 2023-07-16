@@ -38,7 +38,7 @@
                     </div>
                     <div class="w-3/12  mt-10 mx-3">
                         <h3 class="mb-2 text-xl">Migrant-Friendly Support</h3>
-                        <p class="text-xs text-center mx-auto w-4/6">Whether You're Relocating or Looking to Settle Down, We Provide Dedicated Assistance to Make Your Transition Effortless<./p>
+                        <p class="text-xs text-center mx-auto w-4/6">Whether You're Relocating or Looking to Settle Down, We Provide Dedicated Assistance to Make Your Transition Effortless</p>
                     </div>
                     <div class="w-3/12  mt-10 mx-3">
                         <h3 class="mb-2 text-xl">Round-the-Clock Support</h3>
@@ -90,6 +90,7 @@ Transparent Transactions: Trust and Integrity Are at the Core of Our Operations.
                     Our platform is designed to provide comprehensive support for all your property-related needs.</p>
             </div>
         </div>
+    </div>
         <!-- <div class="relative mt-10 mb-14 bg-cover rounded-xl py-24 bg-center"
              style="background-image: url(/img/6.jpg)">
             <div class="absolute w-full h-full rounded-xl opacity-50 bg-black left-0 top-0"></div>

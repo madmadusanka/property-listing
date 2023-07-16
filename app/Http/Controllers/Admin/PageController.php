@@ -29,7 +29,7 @@ class PageController extends Controller
     public function saveOrUpdate($page, $request) {
         $page->name = $request->name;
         $page->slug = $request->slug;
-        $page->content = $request->slug;
+        $page->content = $request->content;
 
         $page->save();
     }
@@ -74,9 +74,8 @@ class PageController extends Controller
         $page = Page::findOrFail($id);
 
         $request->validate($this->validatePage());
-
-
         $this->saveOrUpdate($page, $request);
+
 
         Flasher::addSuccess($request->name.' Page Updated Successfully');
 
