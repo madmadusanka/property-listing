@@ -78,7 +78,6 @@
 
                     <div class="thumbnail-slider mt-4">
                         @foreach($property->gallery as $gallery)
-                            <img src="'images/{{$gallery->name}}" >
                             @if (file_exists(public_path('/images/'.$gallery->name)))
                                 <div style="background-image: url('/images/{{ $gallery->name }}')" class="single-thumbnail-item bg-cover bg-center custom-thumbnail"></div>
                             @else
