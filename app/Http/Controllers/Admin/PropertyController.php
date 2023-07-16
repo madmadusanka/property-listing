@@ -10,6 +10,7 @@ use App\Models\Media;
 use Flasher\Laravel\Facade\Flasher;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class PropertyController extends Controller
 {
@@ -175,7 +176,6 @@ class PropertyController extends Controller
     {
         return [
             'name' => 'required',
-            'name_tr' => 'required',
             'location_id' => 'required',
             'price' => 'required|integer',
             'sale' => 'integer',
@@ -184,9 +184,7 @@ class PropertyController extends Controller
             'net_sqm' => 'integer',
             'pool' => 'integer',
             'overview' => 'required',
-            'overview_tr' => 'required',
             'description' => 'required',
-            'description_tr' => 'required',
         ];
     }
 
@@ -195,26 +193,19 @@ class PropertyController extends Controller
     public function saveOrUpdateProperty($property, $request)
     {
         $property->name = $request->name;
-        $property->name_tr = $request->name_tr;
 
         // Get Default value from databse
         $featured_image_name = $property->featured_image;
         // Check if image is empty or not
         if (!empty($request->file('featured_image'))) {
-            // Check if the file already exits or not
-            if ($featured_image_name) {
-                if (file_exists(public_path('storage/uploads/' . $featured_image_name))) {
-                    unlink(public_path('storage/uploads/' . $featured_image_name));
-                }
-            }
-            // $file = 'uploads/' . $featured_image_name;
-            // if (Storage::exists($file)) {
-            //     Storage::delete($file);
-            // }
-            // Get unique name of the image
-            $featured_image_name = time() . mt_rand(100,999) . '-' . $request->featured_image->getClientOriginalName();
+           
+
+            $extension = $request->featured_image->getClientOriginalExtension();
+
+            $featured_image_name = Str::uuid() . '.' . $extension;
+
             // Store image in Storage
-            $request->featured_image->storeAs('public/uploads', $featured_image_name);
+            $request->featured_image->move(public_path('images'),$featured_image_name);
         }
         // Feature image name into database
         $property->featured_image = $featured_image_name;
@@ -230,11 +221,8 @@ class PropertyController extends Controller
         $property->gross_sqm = $request->gross_sqm;
         $property->pool = $request->pool;
         $property->overview = $request->overview;
-        $property->overview_tr = $request->overview_tr;
         $property->why_buy = $request->why_buy;
-        $property->why_buy_tr = $request->why_buy_tr;
         $property->description = $request->description;
-        $property->description_tr = $request->description_tr;
 
         // Save or update data
         $property->save();
@@ -242,8 +230,13 @@ class PropertyController extends Controller
         // Storing Media - Property Gallery
         if (!empty($request->file('gallery_images'))) {
             foreach ($request->gallery_images as $image) {
+
+                $extension = $image->getClientOriginalExtension();
+
+                $featured_image_name = Str::uuid() . '.' . $extension;
+
                 $gallery_image_name = time() . mt_rand(100,999) . '-' . $image->getClientOriginalName();
-                $image->storeAs('public/uploads', $gallery_image_name);
+                $image->move(public_path('images'),$gallery_image_name);
                 // Insert into PropertyMedia
                 Media::create([
                     'name'  => $gallery_image_name,

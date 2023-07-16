@@ -9,6 +9,7 @@ use App\Mail\EnquireEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Jobs\ProcessEnquireEmail;
 use Illuminate\Http\Request;
+use App\Models\Media;
 
 class PropertyController extends Controller
 {
@@ -114,8 +115,10 @@ class PropertyController extends Controller
         //$property = Property::with('gallery', 'location')->findOrFail($id);  // Find Property by id
 
         $property = Property::findOrFail($id);
+
+        $gallery = Media::where('property_id', $id)->get();
         //dd($property->gallery());
-        return view('property.single')->with('property', $property);
+        return view('property.single')->with(['property'=> $property,'gallery'=>$gallery]);
     }
 
 
