@@ -26,14 +26,14 @@
                                 @enderror
                             </div>
 
-                            <div class="flex-1 px-4">
+                            <!-- <div class="flex-1 px-4">
                                 <label class="civanoglu-label" for="name_tr">Title - Turkish <span class="required-text">*</span></label>
                                 <input class="civanoglu-input" type="text" id="name_tr" name="name_tr" value="{{$property->name_tr}}" required>
 
                                 @error('name_tr')
                                     <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                                 @enderror
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="mb-6 flex">
@@ -47,8 +47,8 @@
                             </div>
 
                             <div class="mt-3 ml-5">
-                                @if (file_exists(public_path('storage/uploads/' . $property->featured_image)))
-                                    <img style="max-width: 100px" src="/storage/uploads/{{$property->featured_image}}" alt="Not Found Image">
+                                @if (file_exists(public_path('images/' . $property->featured_image)))
+                                    <img style="max-width: 100px" src="/images/{{$property->featured_image}}" alt="Not Found Image">
                                 @endif
                             </div>
                         </div>
@@ -60,9 +60,9 @@
                                 <div class="flex items-center -mx-2">
                                     @foreach ($property->gallery as $item)
 
-                                        @if (file_exists(public_path('storage/uploads/' . $item->name)))
+                                        @if (file_exists(public_path('images/' . $item->name)))
                                             <div class="relative">
-                                                <img style="max-width: 100px; max-height:100px" class="mx-2" src="/storage/uploads/{{$item->name}}" alt="image not found">
+                                                <img style="max-width: 100px; max-height:100px" class="mx-2" src="/images/{{$item->name}}" alt="image not found">
                                                 <a href="{{ route('deleteMedia',$item->id) }}" onclick="return confirm('Are you sure you want to delete the location?')" class="absolute top-0 right-0 bg-red-500 w-5 h-5 leading-5 text-sm text-white rounded-full text-center hover:text-white hover:bg-black"><i class="fa fa-close"></i></a>
                                             </div>
                                         @endif
@@ -228,14 +228,14 @@
                                 @enderror
                             </div>
 
-                            <div class="flex-1 px-4">
+                            <!-- <div class="flex-1 px-4">
                                 <label class="civanoglu-label" for="overview_tr">Overview - TR <span class="required-text">*</span></label>
                                 <textarea class="civanoglu-input" name="overview_tr" id="overview_tr" cols="30" rows="3" required>{{$property->overview_tr}}</textarea>
 
                                 @error('overview_tr')
                                 <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                                 @enderror
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="flex -mx-4 mb-6">
@@ -248,14 +248,14 @@
                                 @enderror
                             </div>
 
-                            <div class="flex-1 px-4">
+                            <!-- <div class="flex-1 px-4">
                                 <label class="civanoglu-label" for="why_buy_tr">Why buy - TR <span class="required-text">*</span></label>
                                 <textarea class="civanoglu-input" name="why_buy_tr" id="why_buy_tr" cols="30" rows="5" required>{{$property->why_buy_tr}}</textarea>
 
                                 @error('why_buy_tr')
                                     <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                                 @enderror
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="flex -mx-4 mb-6">
@@ -268,14 +268,14 @@
                                 @enderror
                             </div>
 
-                            <div class="flex-1 px-4">
+                            <!-- <div class="flex-1 px-4">
                                 <label class="civanoglu-label" for="description_tr">Description - TR <span class="required-text">*</span></label>
                                 <textarea class="civanoglu-input" name="description_tr" id="description_tr" cols="30" rows="10" required>{{ $property->description_tr }}</textarea>
 
                                 @error('description_tr')
                                     <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                                 @enderror
-                            </div>
+                            </div> -->
                         </div>
 
                         <button class="btn" type="submit">Save Property</button>
