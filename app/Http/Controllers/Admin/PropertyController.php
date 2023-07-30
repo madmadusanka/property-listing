@@ -16,6 +16,7 @@ class PropertyController extends Controller
 {
 
 //------------------------ Index of Property ----------------------------------------------------------------
+    $publicHtmlPath = '../public_html';
     public function index()
     {
              // if($user && $user->getAttribute('role') == 'user'){
@@ -206,7 +207,7 @@ class PropertyController extends Controller
             $featured_image_name = Str::uuid() . '.' . $extension;
 
             // Store image in Storage
-            $request->featured_image->move(public_path('images'),$featured_image_name);
+            $request->featured_image->move($publicHtmlPath.'images',$featured_image_name);
         }
         // Feature image name into database
         $property->featured_image = $featured_image_name;
@@ -238,7 +239,12 @@ class PropertyController extends Controller
 
                 $gallery_image_name = Str::uuid() . '.' . $extension;
 
-                $image->move(public_path('images'),$gallery_image_name);
+
+            // Store image in Storage
+                $image->move($publicHtmlPath.'/images',$gallery_image_name);
+
+
+                //$image->move(public_path('images'),$gallery_image_name);
                 // Insert into PropertyMedia
                 Media::create([
                     'name'  => $gallery_image_name,
